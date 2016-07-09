@@ -5,9 +5,11 @@ class SleepyMailer < ApplicationMailer
   #
   #   en.sleepy_mailer.hello.subject
   #
-  def hello
-    @greeting = "Hi"
+  def hello(sleepiness)
+    sleep sleepiness
 
-    mail to: "to@example.org"
+    subject = "slept #{sleepiness}, sent at #{Time.now.iso8601}"
+
+    mail to: "chillmailer@mailinator.com", subject: subject
   end
 end
