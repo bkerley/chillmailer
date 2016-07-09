@@ -4,19 +4,4 @@
   <a href="https://www.mailinator.com/inbox2.jsp?public_to=chillmailer#/#public_maildirdiv">https://www.mailinator.com/inbox2.jsp?public_to=chillmailer#/#public_maildirdiv</a>
 </p>
 
-<dl>
-  <dt>
-    <%= button_to 'quick mail', mail_path(0) %>
-  </dt>
-  <dd>
-    &#x2615; doesn't sleep &#x2615;
-  </dd>
-  <% [5, 10, 30, 60].each do |sec| %>
-    <dt>
-      <%= button_to "sleep #{sec} then mail", mail_path(sec) %>
-    </dt>
-    <dd>
-      sleeps <%= sec %> before sending mail
-    </dd>
-  <% end %>
-</dl>
+<%= render 'buttons' %>
